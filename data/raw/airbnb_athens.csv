@@ -1,0 +1,5 @@
+listing_id,neighborhood,price,beds,available
+1001,Koukaki,55.0,2.0,yes
+1002,Plaka,70.0,3.0,no
+1003,Monastiraki,,2.0,yes
+1004,,80.0,,yes

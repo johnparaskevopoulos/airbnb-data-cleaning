@@ -5,6 +5,12 @@ import matplotlib.pyplot as plt
 import argparse
 import os
 
+def ensure_dir_exists(file_path):
+    """Create parent directories for the given file if they don't exist."""
+    directory = os.path.dirname(file_path)
+    if directory:
+        os.makedirs(directory, exist_ok=True)
+
 # -----------------------------
 # 🔹 Στάδιο 1: Καθαρισμός CSV
 # -----------------------------
@@ -16,6 +22,7 @@ def clean_data(input_path, output_path):
     df_cleaned = df.dropna()
 
     # Αποθηκεύουμε το καθαρισμένο αρχείο σε νέο path
+    ensure_dir_exists(output_path)
     df_cleaned.to_csv(output_path, index=False)
 
     return df_cleaned
@@ -39,6 +46,7 @@ def generate_report(df, report_path):
     plt.tight_layout()
 
     # Αποθηκεύουμε το διάγραμμα σε PNG αρχείο
+    ensure_dir_exists(report_path)
     plt.savefig(report_path)
     print(f"✅ Report saved to {report_path}")
 

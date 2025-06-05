@@ -30,3 +30,6 @@ python src/clean_airbnb.py \
   --input data/raw/airbnb_athens.csv \
   --output data/processed/airbnb_cleaned.csv \
   --report reports/airbnb_report.png
+```
+
+Τα απαραίτητα directories θα δημιουργηθούν αυτόματα εάν δεν υπάρχουν.

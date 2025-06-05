@@ -6,13 +6,13 @@
 
 my_data_engineer_journey/
 ├── data/
-│ ├── raw/ # Αρχικά (μη καθαρισμένα) δεδομένα
-│ └── processed/ # Καθαρισμένα δεδομένα έτοιμα για analysis
+│   ├── raw/ # Αρχικά (μη καθαρισμένα) δεδομένα
+│   └── processed/ # Καθαρισμένα δεδομένα έτοιμα για analysis
 ├── reports/ # Αρχεία εξόδου (π.χ. PNG διαγράμματα)
 ├── notebooks/ # Εξερευνητικά Jupyter notebooks
 ├── src/ # Scripts σε μορφή CLI (π.χ. clean_airbnb.py)
+├── eshop/ # Απλό Flask e-shop
 ├── README.md # Περιγραφή project
-
 
 ## 🔧 Περιγραφή
 
@@ -23,10 +23,22 @@ my_data_engineer_journey/
 - Ομαδοποιεί ανά περιοχή και υπολογίζει μέσες τιμές
 - Δημιουργεί bar chart και αποθηκεύει PNG report
 
-## 🚀 Εκτέλεση
+## 🚀 Εκτέλεση καθαρισμού
 
 ```bash
 python src/clean_airbnb.py \
   --input data/raw/airbnb_athens.csv \
   --output data/processed/airbnb_cleaned.csv \
   --report reports/airbnb_report.png
+```
+
+## 🛒 Απλό E-Shop
+
+Μπορείτε να τρέξετε ένα μίνι Flask e-shop από τον φάκελο `eshop`:
+
+```bash
+pip install -r requirements.txt
+python eshop/app.py
+```
+
+Το e-shop εμφανίζει λίστα προϊόντων, προσθήκη στο καλάθι και απλή σελίδα checkout.
